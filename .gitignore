@@ -1,0 +1,7 @@
+a.out
+*~
+*.swp
+build
+.DS_Store
+._*
+imgui.ini
