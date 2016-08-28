@@ -935,7 +935,7 @@ main( int argc,
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
-    window = SDL_CreateWindow( "<GAME NAME HERE>", 0, 0, windowDim.x, windowDim.y, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE );
+    window = SDL_CreateWindow( "<GAME NAME HERE>", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, windowDim.x, windowDim.y, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE );
     if ( window == NULL ) {
         throw Exception( SDL_GetError() );
     }
