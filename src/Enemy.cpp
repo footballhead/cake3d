@@ -116,7 +116,7 @@ const {
 void
 Enemy::draw( glm::mat4 accum )
 {
-    Material * old_mat;
+    Material * old_mat = nullptr;
     if ( m_wasHurt ) {
         old_mat = getMaterial();
         setMaterial( Enemy::hurt_material );

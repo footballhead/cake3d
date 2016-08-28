@@ -5,3 +5,7 @@ build
 .DS_Store
 ._*
 imgui.ini
+.vs
+*.VC.db
+*.VC.opendb
+*.vcxproj.user

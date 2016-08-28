@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E145D839-1EBA-449F-8127-5B609DB26610}</ProjectGuid>
+    <RootNamespace>cake3d_src</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>cake3d</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)build\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)build\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)build\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)build\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)shared\imgui-1.47\examples\sdl_opengl3_example;$(SolutionDir)shared\imgui-1.47;$(SolutionDir)shared\SDL2_mixer-2.0.1;$(SolutionDir)shared;$(SolutionDir)shared\gl3w;$(SolutionDir)shared\SDL2-2.0.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>SDL2main.lib;gl3w.lib;SDL2.lib;SDL2_mixer.lib;imgui.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)build\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+	  <AdditionalIncludeDirectories>$(SolutionDir)shared\imgui-1.47\examples\sdl_opengl3_example;$(SolutionDir)shared\imgui-1.47;$(SolutionDir)shared\SDL2_mixer-2.0.1;$(SolutionDir)shared;$(SolutionDir)shared\gl3w;$(SolutionDir)shared\SDL2-2.0.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+	<Link>
+      <AdditionalDependencies>SDL2main.lib;gl3w.lib;SDL2.lib;SDL2_mixer.lib;imgui.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)build\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+	  <AdditionalIncludeDirectories>$(SolutionDir)shared\imgui-1.47\examples\sdl_opengl3_example;$(SolutionDir)shared\imgui-1.47;$(SolutionDir)shared\SDL2_mixer-2.0.1;$(SolutionDir)shared;$(SolutionDir)shared\gl3w;$(SolutionDir)shared\SDL2-2.0.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+	  <AdditionalDependencies>SDL2main.lib;gl3w.lib;SDL2.lib;SDL2_mixer.lib;imgui.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)build\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+	  <AdditionalIncludeDirectories>$(SolutionDir)shared\imgui-1.47\examples\sdl_opengl3_example;$(SolutionDir)shared\imgui-1.47;$(SolutionDir)shared\SDL2_mixer-2.0.1;$(SolutionDir)shared;$(SolutionDir)shared\gl3w;$(SolutionDir)shared\SDL2-2.0.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+	  <AdditionalDependencies>SDL2main.lib;gl3w.lib;SDL2.lib;SDL2_mixer.lib;imgui.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)build\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="GeometryNode.cpp" />
+    <ClCompile Include="GlErrorCheck.cpp" />
+    <ClCompile Include="Keyframe.cpp" />
+    <ClCompile Include="Level.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Material.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="ModelCache.cpp" />
+    <ClCompile Include="ObjFileDecoder.cpp" />
+    <ClCompile Include="ParticleSystem.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PostProcess.cpp" />
+    <ClCompile Include="SceneNode.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="SoundCache.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureCache.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bullet.hpp" />
+    <ClInclude Include="Enemy.hpp" />
+    <ClInclude Include="Exception.hpp" />
+    <ClInclude Include="GeometryNode.hpp" />
+    <ClInclude Include="GlErrorCheck.hpp" />
+    <ClInclude Include="globals.hpp" />
+    <ClInclude Include="Keyframe.hpp" />
+    <ClInclude Include="Level.hpp" />
+    <ClInclude Include="Material.hpp" />
+    <ClInclude Include="MathUtils.hpp" />
+    <ClInclude Include="Model.hpp" />
+    <ClInclude Include="ModelCache.hpp" />
+    <ClInclude Include="ObjFileDecoder.hpp" />
+    <ClInclude Include="OpenGLImport.hpp" />
+    <ClInclude Include="ParticleSystem.hpp" />
+    <ClInclude Include="Player.hpp" />
+    <ClInclude Include="PostProcess.hpp" />
+    <ClInclude Include="SceneNode.hpp" />
+    <ClInclude Include="Shader.hpp" />
+    <ClInclude Include="SoundCache.hpp" />
+    <ClInclude Include="Texture.hpp" />
+    <ClInclude Include="TextureCache.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

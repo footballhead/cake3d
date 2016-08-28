@@ -105,7 +105,12 @@ Shader::checkCompilationStatus( GLuint shaderObject )
         glGetShaderiv(shaderObject, GL_INFO_LOG_LENGTH, &errorMessageLength);
 
         // Retrieve the compilation error message.
+#ifdef _MSC_VER
+        // Visual Studio does not support variable length arrays, used a fixed length buffer
+        GLchar errorMessage[1024];  
+#else
         GLchar errorMessage[errorMessageLength + 1]; // Add 1 for null terminator
+#endif
         glGetShaderInfoLog(shaderObject, errorMessageLength, NULL, errorMessage);
 
         std::string message = "Error Compiling Shader: ";
@@ -127,7 +132,12 @@ Shader::checkLinkStatus(GLuint programObject)
         glGetProgramiv(programObject, GL_INFO_LOG_LENGTH, &errorMessageLength);
 
         // Retrieve the link error message.
+#ifdef _MSC_VER
+        // Visual Studio does not support variable length arrays, used a fixed length buffer
+        GLchar errorMessage[1024];  
+#else
         GLchar errorMessage[errorMessageLength];
+#endif
         glGetProgramInfoLog(programObject, errorMessageLength, NULL, errorMessage);
 
         std::stringstream strStream;
