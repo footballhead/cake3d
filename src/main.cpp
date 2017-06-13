@@ -1,6 +1,10 @@
 #include <SDL.h>
 #include <SDL_mixer.h>
 
+#ifndef _WIN32
+    #include <unistd.h>
+#endif
+
 #include <cstdio>
 #include <ctime>
 #include <cstdlib>
@@ -910,6 +914,10 @@ int
 main( int argc,
       char ** argv )
 {
+    #ifndef _WIN32
+        chdir("/usr/share/gafmc");
+    #endif
+
     if ( SDL_Init( SDL_INIT_EVERYTHING ) != 0 ) {
         throw Exception( SDL_GetError() );
     }

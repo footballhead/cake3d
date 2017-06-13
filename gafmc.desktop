@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Get Away From My Cake!
+Comment=Get Away From My Cake!
+Exec=gafmc
+Icon=/usr/share/gafmc/icon.png
+Terminal=false
+Type=Application
+Categories=Games;
