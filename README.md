@@ -4,10 +4,10 @@ Made by Michael Hitchens
 
 A small arcade FPS called "Get Away From My Cake!". The story is as follows:
 
-    It's your birthday and you baked a lovely cake. It smells so good that
-    aliens from outer space have invited themselves over to steal it! You, armed
-    with your super effective paint ball gun, must protect your cake at all
-    costs! Retreating into your basement, you prepare for a final standoff...
+> It's your birthday and you baked a lovely cake. It smells so good that
+> aliens from outer space have invited themselves over to steal it! You, armed
+> with your super effective paint ball gun, must protect your cake at all
+> costs! Retreating into your basement, you prepare for a final standoff...
 
 ![gameplay screenshot](screenshot.png)
 
@@ -18,8 +18,9 @@ compilation takes two steps:
 
 ### Step 1: Compiling SDL
 
-Run
-	sh compile_sdl.sh`
+Run:
+
+    sh compile_sdl.sh
 
 This will compile SDL2 and SDL2\_mixer then drop them in
 your home directory. Step 2 will look for these and complain if they aren't
@@ -38,13 +39,11 @@ make -j8
 
 ## Running
 
-You must run from the project directory root! Otherwise the game will complain
-about finding assets. The built binary called `cs488project` can be found in
-`build/src` and can be run as follows:
+Run this from the root:
 
-```
-./build/src/cs488project
-```
+    ./build/src/cs488project
+
+Otherwise the game will complain about finding assets.
 
 ## Controls
 
