@@ -13,22 +13,7 @@ A small arcade FPS called "Get Away From My Cake!". The story is as follows:
 
 ## Compilation
 
-Since I usee external libraries that don't integrate well with CMake,
-compilation takes two steps:
-
-### Step 1: Compiling SDL
-
-Run:
-
-    sh compile_sdl.sh
-
-This will compile SDL2 and SDL2\_mixer then drop them in
-your home directory. Step 2 will look for these and complain if they aren't
-there. You should only have to do this once.
-
-### Step 2: Compile the game
-
-The rest uses CMake, which works as you would expect CMake to work:
+This project uses CMake the normal way:
 
 ```
 mkdir build
