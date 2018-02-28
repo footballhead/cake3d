@@ -9,6 +9,8 @@ A small arcade FPS called "Get Away From My Cake!". The story is as follows:
     with your super effective paint ball gun, must protect your cake at all
     costs! Retreating into your basement, you prepare for a final standoff...
 
+![gameplay screenshot](screenshot.png)
+
 ## Compilation
 
 Since I usee external libraries that don't integrate well with CMake,
@@ -16,7 +18,10 @@ compilation takes two steps:
 
 ### Step 1: Compiling SDL
 
-Run `sh compile_sdl.sh`. This will compile SDL2 and SDL2_mixer then drop them in
+Run
+	sh compile_sdl.sh`
+
+This will compile SDL2 and SDL2\_mixer then drop them in
 your home directory. Step 2 will look for these and complain if they aren't
 there. You should only have to do this once.
 
@@ -66,7 +71,7 @@ All models were made by Michael Hitchens in Blender.
 The following libraries were used:
 
   * SDL2 -- A better GLFW (zlib license)
-  * SDL2_mixer -- SDL2 addon for playing sound (zlib license)
+  * SDL2\_mixer -- SDL2 addon for playing sound (zlib license)
   * glm -- For 3D math (Modified MIT)
   * gl3w -- For OpenGL 3.3 functionality (public domain)
   * dear imgui -- For UI (MIT license)
