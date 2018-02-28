@@ -10,7 +10,7 @@
 // SDL,GL3W
 #include <SDL.h>
 #include <SDL_syswm.h>
-#include <GL/gl3w.h>
+#include <OpenGL/gl3.h>
 
 // Data
 static SDL_Window*  g_Window = NULL;
@@ -295,7 +295,7 @@ void    ImGui_ImplSdlGL3_InvalidateDeviceObjects()
 bool    ImGui_ImplSdlGL3_Init(SDL_Window *window)
 {
 	g_Window = window;
-	
+
 	ImGuiIO& io = ImGui::GetIO();
 	io.KeyMap[ImGuiKey_Tab] = SDLK_TAB;                     // Keyboard mapping. ImGui will use those indices to peek into the io.KeyDown[] array.
 	io.KeyMap[ImGuiKey_LeftArrow] = SDL_SCANCODE_LEFT;

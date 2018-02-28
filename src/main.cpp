@@ -15,6 +15,8 @@
 #include <imgui.h>
 #include <imgui_impl_sdl_gl3.h>
 
+#include <unistd.h>
+
 #include "Keyframe.hpp"
 #include "Exception.hpp"
 #include "GlErrorCheck.hpp"
@@ -914,6 +916,8 @@ main( int argc,
         throw Exception( SDL_GetError() );
     }
 
+    chdir(SDL_GetBasePath());
+
     if ( Mix_Init( MIX_INIT_OGG ) & MIX_INIT_OGG != MIX_INIT_OGG ) {
         throw Exception( SDL_GetError() );
     }
@@ -927,6 +931,8 @@ main( int argc,
 
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+
     //SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
     //SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 4);
     SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 5);
@@ -945,9 +951,9 @@ main( int argc,
         throw Exception( SDL_GetError() );
     }
 
-    if ( gl3wInit() != 0 ) {
-        throw Exception( "GL3W failed to initialize!" );
-    }
+    //if ( gl3wInit() != 0 ) {
+    //    throw Exception( "GL3W failed to initialize!" );
+    //}
 
     if ( !ImGui_ImplSdlGL3_Init(window) ) {
         // the code always returns true but whatever

@@ -12,7 +12,6 @@ set(SOURCES
     ParticleSystem.cpp
     Player.cpp
     PostProcess.cpp
-    Primitive.cpp
     SceneNode.cpp
     Shader.cpp
     SoundCache.cpp
@@ -22,4 +21,4 @@ set(SOURCES
 )
 
 add_executable(cs488project ${SOURCES})
-target_link_libraries(cs488project gl3w GL dl $ENV{HOME}/SDL2/lib/libSDL2.so $ENV{HOME}/SDL2_mixer/lib/libSDL2_mixer.so imgui imgui_sdl_lib)
+target_link_libraries(cs488project "-framework OpenGL" dl ${SDL2_LIBRARY} ${SDL2_MIXER_LIBRARY} imgui imgui_sdl_lib)

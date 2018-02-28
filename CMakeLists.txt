@@ -9,9 +9,12 @@ include_directories(
 	shared/gl3w
 	shared/imgui-1.47
 	shared/imgui-1.47/examples/sdl_opengl3_example
-	$ENV{HOME}/SDL2/include/SDL2
-	$ENV{HOME}/SDL2_mixer/include/SDL2
+	$ENV{HOME}/Library/Frameworks/SDL2.framework/Headers
+	$ENV{HOME}/Library/Frameworks/SDL2_mixer.framework/Headers
 )
+
+set(SDL2_LIBRARY $ENV{HOME}/Library/Frameworks/SDL2.framework/SDL2)
+set(SDL2_MIXER_LIBRARY $ENV{HOME}/Library/Frameworks/SDL2_mixer.framework/SDL2_mixer)
 
 add_subdirectory(shared)
 add_subdirectory(src)
