@@ -13,6 +13,3 @@
 #elif defined _WIN32
     #include "GL\gl3w.h"
 #endif
-
-
-#include <SDL_opengl.h>

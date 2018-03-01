@@ -10,7 +10,12 @@
 // SDL,GL3W
 #include <SDL.h>
 #include <SDL_syswm.h>
-#include <GL/gl3w.h>
+
+#ifdef __APPLE__
+    #include <OpenGL/gl3.h>
+#else
+    #include <GL/gl3w.h>
+#endif
 
 // Data
 static SDL_Window*  g_Window = NULL;

@@ -914,9 +914,9 @@ int
 main( int argc,
       char ** argv )
 {
-    #ifndef _WIN32
-        chdir("/usr/share/gafmc");
-    #endif
+#if !defined(_WIN32) && !defined(__APPLE__)
+    chdir("/usr/share/gafmc");
+#endif
 
     if ( SDL_Init( SDL_INIT_EVERYTHING ) != 0 ) {
         throw Exception( SDL_GetError() );
@@ -935,6 +935,8 @@ main( int argc,
 
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+
     //SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
     //SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 4);
     SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 5);
@@ -953,9 +955,11 @@ main( int argc,
         throw Exception( SDL_GetError() );
     }
 
+#if !defined(__APPLE__)
     if ( gl3wInit() != 0 ) {
         throw Exception( "GL3W failed to initialize!" );
     }
+#endif
 
     if ( !ImGui_ImplSdlGL3_Init(window) ) {
         // the code always returns true but whatever
