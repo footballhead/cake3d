@@ -1,4 +1,5 @@
-# You need to prebuild SDL :(
-# add_subdirectory(SDL2-2.0.4)
-add_subdirectory(gl3w)
+if (NOT APPLE)
+    add_subdirectory(gl3w)
+endif()
+
 add_subdirectory(imgui-1.47)
